@@ -8,7 +8,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/manifest.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#14b8a6" />
-        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="../index.css">
         <meta name="msapplication-TileColor" content="#14b8a6" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,8 +16,14 @@
         <title>Tripsultant</title>
     </head>
     <body class="font-body">
-        <div class="text-3xl font-bold underline">Hello, <em>World</em>!</div>
-        <div><a href="./contact/">Contact</a></div>
-        <script type="module" src="./main.ts"></script>
+        <div class="text-3xl font-bold underline">Hello, Contact!</div>
+        <form action="POST">
+            <input type="email" class="form-input"/>
+            <input type="text" class="form-input"/>
+            <input type="tel" class="form-input"/>
+            <textarea name="" id="" cols="30" rows="10" class="form-textarea"></textarea>
+        </form>
+
+        <script type="module" src="../main.ts"></script>
     </body>
 </html>
