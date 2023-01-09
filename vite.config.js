@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
+import { imagetools } from 'vite-imagetools';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
@@ -19,6 +20,14 @@ export default defineConfig({
         emptyOutDir: true
     },
     plugins: [
+        imagetools({
+            defaultDirectives: id => {
+                if (id.searchParams.has('hero')) { // the `hero` directive was set on the image
+                   return new URLSearchParams('w=400&h=300&webp')
+                }
+                return new URLSearchParams()
+             }
+        }),
         VitePWA({
             registerType: 'autoUpdate',
             manifest: {
@@ -44,9 +53,9 @@ export default defineConfig({
                 lang: 'en',
                 scope: '/'
             },
-            devOptions: {
-                enabled: true
-            }
+            // devOptions: {
+            //     enabled: true
+            // }
         }),
     ],
     test: {

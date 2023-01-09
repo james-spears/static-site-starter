@@ -17,13 +17,16 @@
     </head>
     <body class="font-body">
         <div class="text-3xl font-bold underline">Hello, Contact!</div>
-        <form action="POST">
-            <input type="email" class="form-input"/>
+        <img id="form-img"/>
+        <form class="flex flex-col" action="">
             <input type="text" class="form-input"/>
+            <input type="email" class="form-input"/>
             <input type="tel" class="form-input"/>
             <textarea name="" id="" cols="30" rows="10" class="form-textarea"></textarea>
+            <button type="submit">Submit</button>
         </form>
 
         <script type="module" src="../main.ts"></script>
+        <script type="module" src="./index.ts"></script>
     </body>
 </html>
