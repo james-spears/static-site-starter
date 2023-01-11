@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { join, resolve } from 'path';
 import { defineConfig } from 'vite';
 import { imagetools } from 'vite-imagetools';
@@ -21,14 +22,11 @@ export default defineConfig({
         emptyOutDir: true
     },
     plugins: [
-        ViteEjsPlugin(
-            data,
-            {
-                ejs: (config) => ({
-                    views: [config.root, join(config.root, '_partials')]
-                })
-            }
-        ),
+        ViteEjsPlugin(data, {
+            ejs: (config) => ({
+                views: [config.root, join(config.root, '_partials')]
+            })
+        }),
         imagetools({
             defaultDirectives: (id) => {
                 if (id.searchParams.has('hero')) {

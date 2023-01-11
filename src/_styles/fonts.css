@@ -1,19 +1,19 @@
 @font-face {
-  font-family: 'Open Sans Italic';
-  src: url('../_fonts/OpenSans-Italic-VariableFont_wdth,wght.woff2') format('woff2'),
-      url('../_fonts/OpenSans-Italic-VariableFont_wdth,wght.woff') format('woff');
-  font-weight: 300 700;
-  font-style: italic;
-  font-display: swap;
+    font-family: 'Open Sans Italic';
+    src: url('../_fonts/OpenSans-Italic-VariableFont_wdth,wght.woff2') format('woff2'),
+        url('../_fonts/OpenSans-Italic-VariableFont_wdth,wght.woff') format('woff');
+    font-weight: 300 700;
+    font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Open Sans';
-  src: url('../_fonts/OpenSans-VariableFont_wdth,wght.woff2') format('woff2'),
-      url('../_fonts/OpenSans-VariableFont_wdth,wght.woff') format('woff');
-  font-weight: 300 700;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Open Sans';
+    src: url('../_fonts/OpenSans-VariableFont_wdth,wght.woff2') format('woff2'),
+        url('../_fonts/OpenSans-VariableFont_wdth,wght.woff') format('woff');
+    font-weight: 300 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 i,
@@ -25,6 +25,6 @@ dfn,
 .italic,
 h3,
 .h3 {
-  font-family: 'Open Sans Italic';
-  font-weight: 700;
+    font-family: 'Open Sans Italic';
+    font-weight: 700;
 }

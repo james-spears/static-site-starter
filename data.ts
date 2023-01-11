@@ -1,3 +1,3 @@
 export const data = {
-  title: 'Static Site Starter'
+    title: 'Static Site Starter'
 };
