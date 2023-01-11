@@ -8,25 +8,71 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/manifest.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#14b8a6" />
-        <link rel="stylesheet" href="../index.css">
+        <link rel="stylesheet" href="../index.css" />
         <meta name="msapplication-TileColor" content="#14b8a6" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Static Site Starter." />
-        <title>Tripsultant</title>
+
+        <style>
+            @font-face {
+                font-family: 'Open Sans Italic';
+                src: url('../_fonts/OpenSans-Italic-VariableFont_wdth,wght.woff2') format('woff2'),
+                    url('../_fonts/OpenSans-Italic-VariableFont_wdth,wght.woff') format('woff');
+                font-weight: 300 700;
+                font-style: italic;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: 'Open Sans';
+                src: url('../_fonts/OpenSans-VariableFont_wdth,wght.woff2') format('woff2'),
+                    url('../_fonts/OpenSans-VariableFont_wdth,wght.woff') format('woff');
+                font-weight: 300 700;
+                font-style: normal;
+                font-display: swap;
+            }
+
+            i,
+            cite,
+            em,
+            var,
+            address,
+            dfn,
+            .italic,
+            h3,
+            .h3 {
+                font-family: 'Open Sans Italic';
+                font-weight: 700;
+            }
+        </style>
+
+        <title><%= title %></title>
     </head>
     <body class="font-body">
+        <%- include('../_partials/header.html'); %>
         <div class="text-3xl font-bold underline">Hello, Contact!</div>
-        <img id="form-img"/>
-        <form class="flex flex-col" action="">
-            <input type="text" class="form-input"/>
-            <input type="email" class="form-input"/>
-            <input type="tel" class="form-input"/>
-            <textarea name="" id="" cols="30" rows="10" class="form-textarea"></textarea>
-            <button type="submit">Submit</button>
+        <img src="../_images/beach.webp" width="720" height="540" alt="Tropical Beach" id="form-img" />
+        <form class="flex flex-col p-4" action="">
+            <label for="name">Name</label>
+            <input id="name" type="text" class="form-input" aria-label="Name" />
+            <label for="email">Email</label>
+            <input id="email" type="email" class="form-input" aria-label="Email" />
+            <label for="tel">Telephone</label>
+            <input id="tel" type="tel" class="form-input" aria-label="Telephone" />
+            <label for="message">Message</label>
+            <textarea
+                class="m-4"
+                id="message"
+                cols="30"
+                rows="10"
+                class="form-textarea"
+                aria-label="Message"
+            ></textarea>
+            <button class="m-4" type="submit">Submit</button>
         </form>
-
-        <script type="module" src="../main.ts"></script>
-        <script type="module" src="./index.ts"></script>
+        <%- include('../_partials/footer.html'); %>
+        <!-- <script type="module" src="../main.ts"></script> -->
+        <!-- <script type="module" src="./index.ts"></script> -->
     </body>
 </html>

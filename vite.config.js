@@ -1,8 +1,9 @@
-/* eslint-disable no-undef */
-import { resolve } from 'path';
+import { join, resolve } from 'path';
 import { defineConfig } from 'vite';
 import { imagetools } from 'vite-imagetools';
 import { VitePWA } from 'vite-plugin-pwa';
+import { ViteEjsPlugin } from 'vite-plugin-ejs';
+import { data } from './data';
 
 export default defineConfig({
     appType: 'mpa',
@@ -20,13 +21,22 @@ export default defineConfig({
         emptyOutDir: true
     },
     plugins: [
+        ViteEjsPlugin(
+            data,
+            {
+                ejs: (config) => ({
+                    views: [config.root, join(config.root, '_partials')]
+                })
+            }
+        ),
         imagetools({
-            defaultDirectives: id => {
-                if (id.searchParams.has('hero')) { // the `hero` directive was set on the image
-                   return new URLSearchParams('w=400&h=300&webp')
+            defaultDirectives: (id) => {
+                if (id.searchParams.has('hero')) {
+                    // the `hero` directive was set on the image
+                    return new URLSearchParams('w=720&h=540&webp');
                 }
-                return new URLSearchParams()
-             }
+                return new URLSearchParams();
+            }
         }),
         VitePWA({
             registerType: 'autoUpdate',
@@ -52,13 +62,13 @@ export default defineConfig({
                 start_url: '/',
                 lang: 'en',
                 scope: '/'
-            },
+            }
             // devOptions: {
             //     enabled: true
             // }
-        }),
+        })
     ],
     test: {
         root: './'
-    },
+    }
 });
